@@ -1,0 +1,145 @@
+@import "https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bodoni+Moda:ital,opsz@0,6..96;1,6..96&family=Didact+Gothic&family=Limelight&display=swap";
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Didact Gothic", sans-serif;
+  background-color: #ebd9b9;
+}
+
+header {
+  margin: 0 auto;
+  text-align: center;
+}
+header a {
+  text-decoration: none;
+}
+header a:active {
+  text-decoration: none;
+}
+header a:visited {
+  text-decoration: none;
+}
+header .title {
+  font-size: 1.6rem;
+  font-family: "Didact Gothic", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+header .subtitle {
+  font-family: "Didact Gothic", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  margin-bottom: 50px;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+.header_top {
+  margin-top: 10px;
+}
+
+.title > span {
+  font-family: "Limelight", display;
+  font-size: 6rem;
+}
+
+.navigation {
+  margin-top: 100px;
+}
+
+.images {
+  margin: 0 auto;
+  width: 30%;
+  border: double 2px #1b1710;
+  padding: 6px 6px 3px 6px;
+  background-color: #ebd9b9;
+}
+.images img {
+  width: 100%;
+}
+
+.book-now {
+  margin: 0 auto;
+  padding-top: 60px;
+  width: 100%;
+  text-align: center;
+}
+.book-now a {
+  text-decoration: none;
+  font-size: 20px;
+  padding: 15px;
+  color: #fef3df;
+  background-color: #701b1b;
+  border: double 1px #1b1710;
+  transition: all ease-in-out 0.3s;
+}
+.book-now a:hover {
+  border: 4px double #1b1710;
+  transition: all ease-in-out 0.3s;
+}
+
+.booking {
+  width: 99.5%;
+  height: 99vh;
+  margin-top: 100vh;
+  margin-left: 0;
+  background-color: #701b1b;
+  border-radius: 10px;
+}
+
+.contact-form {
+  width: 99.5%;
+  height: 99vh;
+  margin-top: 100px;
+  margin-left: 0;
+  background-color: #701b1b;
+  border-radius: 10px;
+}
+
+a:active {
+  text-decoration: none;
+  font-size: 20px;
+  padding: 15px;
+  color: #fef3df;
+  background-color: #701b1b;
+  border: double 1px #1b1710;
+  transition: all ease-in-out 0.3s;
+}
+a:visited {
+  text-decoration: none;
+  font-size: 20px;
+  padding: 15px;
+  color: #fef3df;
+  background-color: #701b1b;
+  border: double 1px #1b1710;
+  transition: all ease-in-out 0.3s;
+}
+
+#scroll-to-top {
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  color: #222;
+  font-size: 20px;
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  display: none;
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  line-height: 100%;
+}
+#scroll-to-top:hover {
+  background: #222;
+  color: #fefefe;
+  transition: all 0.3s ease-in-out;
+}/*# sourceMappingURL=style.css.map */
