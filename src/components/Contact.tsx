@@ -1,8 +1,16 @@
-export default function Contact() {
+import { motion } from "framer-motion";
+import { CurrentSection } from "../types";
+
+type Props = {
+  setCurrentSection: (value: CurrentSection) => void;
+}
+
+export default function Contact({ setCurrentSection }: Props) {
   return (
-    <div className="contact-form">
-      <h2 id="contact-form">Contact Us</h2>
-      This will contain a contact form.
-    </div>
+    <section id="contact">
+      <motion.div onViewportEnter={() => setCurrentSection(CurrentSection['Contact'])}>
+        <h1>Contact</h1>
+      </motion.div>
+    </section>
   );
 }

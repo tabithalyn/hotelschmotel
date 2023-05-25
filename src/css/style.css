@@ -1,6 +1,9 @@
 @import "https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bodoni+Moda:ital,opsz@0,6..96;1,6..96&family=Didact+Gothic&family=Limelight&display=swap";
-html {
+*, html {
   scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -8,9 +11,19 @@ body {
   background-color: #ebd9b9;
 }
 
+a:active {
+  text-decoration: none;
+  transition: all ease-in-out 0.3s;
+}
+a:visited {
+  text-decoration: none;
+  transition: all ease-in-out 0.3s;
+}
+
 header {
-  margin: 0 auto;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 header a {
   text-decoration: none;
@@ -27,60 +40,15 @@ header .title {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+header .title > span {
+  font-family: "Limelight", display;
+  font-size: 6rem;
+}
 header .subtitle {
   font-family: "Didact Gothic", sans-serif;
   font-size: 1.2rem;
   letter-spacing: 1px;
   margin-bottom: 50px;
-}
-
-button {
-  outline: none;
-  cursor: pointer;
-}
-
-.header_top {
-  margin-top: 10px;
-}
-
-.title > span {
-  font-family: "Limelight", display;
-  font-size: 6rem;
-}
-
-.navigation {
-  margin-top: 100px;
-}
-
-.images {
-  margin: 0 auto;
-  width: 30%;
-  border: double 2px #1b1710;
-  padding: 6px 6px 3px 6px;
-  background-color: #ebd9b9;
-}
-.images img {
-  width: 100%;
-}
-
-.book-now {
-  margin: 0 auto;
-  padding-top: 60px;
-  width: 100%;
-  text-align: center;
-}
-.book-now a {
-  text-decoration: none;
-  font-size: 20px;
-  padding: 15px;
-  color: #fef3df;
-  background-color: #701b1b;
-  border: double 1px #1b1710;
-  transition: all ease-in-out 0.3s;
-}
-.book-now a:hover {
-  border: 4px double #1b1710;
-  transition: all ease-in-out 0.3s;
 }
 
 .booking {
@@ -99,25 +67,6 @@ button {
   margin-left: 0;
   background-color: #701b1b;
   border-radius: 10px;
-}
-
-a:active {
-  text-decoration: none;
-  font-size: 20px;
-  padding: 15px;
-  color: #fef3df;
-  background-color: #701b1b;
-  border: double 1px #1b1710;
-  transition: all ease-in-out 0.3s;
-}
-a:visited {
-  text-decoration: none;
-  font-size: 20px;
-  padding: 15px;
-  color: #fef3df;
-  background-color: #701b1b;
-  border: double 1px #1b1710;
-  transition: all ease-in-out 0.3s;
 }
 
 #scroll-to-top {
@@ -142,4 +91,167 @@ a:visited {
   background: #222;
   color: #fefefe;
   transition: all 0.3s ease-in-out;
+}
+
+.navigation {
+  position: relative;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  background-color: #ebd9b9;
+}
+.navigation .nav {
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+.navigation .nav-title {
+  font-size: 1.6rem;
+  font-family: "Didact Gothic", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.navigation .nav-title > span {
+  font-family: "Limelight", display;
+  font-size: 6rem;
+}
+.navigation .nav-subtitle {
+  font-family: "Didact Gothic", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+.navigation .anchor-link {
+  display: inline-block;
+  width: 24%;
+  margin: 0.5%;
+  text-decoration: none;
+  text-align: center;
+  padding: 20px 0;
+  background-color: transparent;
+  color: #1b1710;
+  border-radius: 20em;
+  transition: all 0.5s ease;
+}
+.navigation .anchor-link-selected {
+  display: inline-block;
+  padding: 20px 0;
+  text-align: center;
+  width: 24%;
+  margin: 0.5%;
+  background-color: #1b1710;
+  color: #fef3df;
+  border-radius: 20em;
+  text-decoration: none;
+}
+.navigation .anchor-link-selected:hover {
+  background-color: #701b1b;
+}
+.navigation .anchor-link:hover {
+  background-color: #701b1b;
+  color: #fef3df;
+  transition: all 0.5s ease;
+}
+
+.slider-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 100px;
+}
+.slider-container .slider {
+  display: flex;
+  justify-content: center;
+  height: 550px;
+  width: 800px;
+  overflow: hidden;
+}
+@media only screen and (max-width: 375px) {
+  .slider-container .slider {
+    height: 400px;
+    width: 300px;
+  }
+}
+.slider-container .slider .image {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  will-change: transform, opacity;
+}
+.slider-container .slider .image:hover {
+  cursor: grab;
+}
+.slider-container .slider .image:active {
+  cursor: grabbing;
+}
+.slider-container .thumbnails {
+  display: flex;
+  justify-content: center;
+}
+.slider-container .thumbnails .thumbnail-container {
+  position: relative;
+  height: 120px;
+  width: 90px;
+}
+@media only screen and (max-width: 375px) {
+  .slider-container .thumbnails .thumbnail-container {
+    height: 70px;
+    width: 50px;
+  }
+}
+.slider-container .thumbnails .thumbnail-container:hover {
+  cursor: pointer;
+}
+.slider-container .thumbnails .thumbnail-container:not(:last-of-type) {
+  margin-right: 5px;
+}
+.slider-container .thumbnails .thumbnail-container img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.slider-container .thumbnails .thumbnail-container .active-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  transform: scaleX(0);
+  transform-origin: left;
+  background-color: #333;
+  transition: 1s cubic-bezier(0.56, 0.03, 0.12, 1.04) transform;
+}
+.slider-container .thumbnails .thumbnail-container .active-indicator.active {
+  transform: scaleX(1);
+}
+.slider-container .buttons {
+  margin-top: 12px;
+}
+.slider-container .buttons button {
+  outline: none;
+  border: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  padding: 10px 12px;
+  background-color: #333;
+  font-family: inherit;
+  font-size: inherit;
+  color: white;
+  transition: 0.07s ease-out transform;
+}
+.slider-container .buttons button:first-of-type {
+  margin-right: 15px;
+}
+.slider-container .buttons button:hover {
+  cursor: pointer;
+}
+.slider-container .buttons button:active {
+  transform: scale(0.85) skewY(-5deg) rotate(5deg);
 }/*# sourceMappingURL=style.css.map */
