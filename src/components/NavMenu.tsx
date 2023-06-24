@@ -15,13 +15,13 @@ export default function NavMenu({ currentSection, setCurrentSection }: Props) {
 
   return (
     <nav>
-      <div className="navigation">
-      <div className="nav">
-        <div className="nav-title">Welcome to the<br /><span>Hotel Schmotel</span></div>
-        <div className="nav-subtitle">Nobody every checks out.</div>
+      <div className="w-full h-full">
+      <div className="w-100 text-center mt-10">
+        <div className="font-didact text-3xl">Welcome to the<br /><span className="font-limelight text-8xl">Hotel Schmotel</span></div>
+        <div className="font-didact text-xl">Nobody every checks out.</div>
       </div>
         {isAboveMdScreens ? (
-          <div className="navbar">
+          <div className="flex items-stretch mt-20">
             <Link
               section="Home"
               currentSection={currentSection}
@@ -44,18 +44,21 @@ export default function NavMenu({ currentSection, setCurrentSection }: Props) {
             />
           </div>
         ) : (
-          <button onClick={() => setIsNavToggled(!isNavToggled)}>
-            <i className = "fas fa-bars"></i>
-          </button>
+          <div className="w-full ml-10">
+            <button onClick={() => setIsNavToggled(!isNavToggled)}>
+              {isNavToggled ? (
+                <i className="fas fa-chevron-up"></i>
+              ) : (
+                <i className="fas fa-chevron-down"></i>
+              )}
+            </button>
+          </div>
         )}
       </div>
 
       {!isAboveMdScreens && isNavToggled && (
         <div>
-          <button onClick={() => setIsNavToggled(!isNavToggled)}>
-            <i className = "fas fa-bars"></i>
-          </button>
-        <div className="navbar">
+        <div className="w-full flex justify-center">
           <Link
             section="Home"
             currentSection={currentSection}

@@ -7,7 +7,7 @@ type Props = {
 
 export default function Contact({ setCurrentSection }: Props) {
   return (
-    <section id="contact">
+    <section id="contact" className="h-screen w-full bg-stone-600">
       <motion.div onViewportEnter={() => setCurrentSection(CurrentSection['Contact'])}>
         <h1>Contact</h1>
       </motion.div>
