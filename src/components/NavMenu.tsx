@@ -4,7 +4,6 @@ import Link from "./Link";
 import { CurrentSection } from "../types";
 
 type Props = {
-  isTopOfPage: boolean;
   currentSection: CurrentSection;
   setCurrentSection: (value: CurrentSection) => void;
 }
@@ -14,14 +13,15 @@ export default function NavMenu({ currentSection, setCurrentSection }: Props) {
   const isAboveMdScreens = useMediaQuery("(min-width: 860px)");
 
   return (
+    <>
     <nav>
       <div className="w-full h-full">
-      <div className="w-100 text-center mt-10">
+      <div className="w-100 text-center pt-10 pb-20 relative">
         <div className="font-didact text-3xl">Welcome to the<br /><span className="font-limelight text-8xl">Hotel Schmotel</span></div>
         <div className="font-didact text-xl">Nobody every checks out.</div>
       </div>
         {isAboveMdScreens ? (
-          <div className="flex items-stretch mt-20">
+          <div className="w-full flex items-stretch">
             <Link
               section="Home"
               currentSection={currentSection}
@@ -57,7 +57,6 @@ export default function NavMenu({ currentSection, setCurrentSection }: Props) {
       </div>
 
       {!isAboveMdScreens && isNavToggled && (
-        <div>
         <div className="w-full flex justify-center">
           <Link
             section="Home"
@@ -80,8 +79,8 @@ export default function NavMenu({ currentSection, setCurrentSection }: Props) {
             setCurrentSection={setCurrentSection}
           />
         </div>
-        </div>
       )}
     </nav>
+    </>
   );
 }

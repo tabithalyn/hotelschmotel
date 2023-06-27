@@ -21,7 +21,7 @@ export default function Footer() {
     <motion.footer
       whileInView={{ x: "0%" }}
       initial={{ x: "-100%" }}
-      transition={{ duration: 0.3, delay: 0.1 }}
+      transition={{ duration: 0.3, delay: 0.05 }}
       className="flex justify-stretch w-full"
     >
       <div className="w-1/3 p-5">
