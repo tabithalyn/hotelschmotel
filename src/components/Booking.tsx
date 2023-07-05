@@ -1,14 +1,8 @@
+import { motion } from "framer-motion";
 import moment from "moment";
 import { useState } from "react";
-import { Button } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { CurrentSection } from "../types";
-import { motion } from "framer-motion";
-
-type Props = {
-  setCurrentSection: (value: CurrentSection) => void;
-}
 
 const variants = {
   hidden: {
@@ -19,37 +13,51 @@ const variants = {
     opacity: 1,
     x: "0%",
     transition: {
-      delayChildren: 0.1,
-      staggerChildren: 0.08,
-      duration: 0.2
+      delayChildren: 0.2,
+      staggerChildren: 0.1,
+      duration: 0.3
     }
   }
 }
 
-export default function Booking({ setCurrentSection }: Props) {
+export default function Booking() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [dateRange, setDateRange] = useState<any>([null, null]);
   const [startDate, endDate] = dateRange;
 
   return (
-    <motion.section id="booking"
-    className="h-screen bg-stone-200"
-    whileInView={{ x: ["-100%", "0%"] }}
-    transition={{ duration: 0.1, delay: 0.05 }}>
-      <motion.div
-        onViewportEnter={() => setCurrentSection(CurrentSection['Booking'])}
-        whileInView={{ x: ["-100%", "0%"] }}
-        transition={{ duration: 0.3, delay: 0.1 }}
-        className="flex flex-wrap place-content-center w-full h-full"
-      >
-      <motion.div variants={variants} initial="hidden" whileInView="visible" className="w-2/5 flex justify-center">
-        <motion.div variants={variants} className="p-10 w-full bg-red-700 rounded-xl">
-          <motion.div variants={variants}>
-            <h2 className="p-2 text-center text-5xl text-white font-abril" id="booking">Booking</h2>
-            <motion.form variants={variants} className="p-2 w-full flex flex-wrap justify-center">
-              <motion.div variants={variants} className="p-5 flex w-full justify-center flex-wrap">
-                <motion.div variants={variants}>
-                <label className="font-bodoni">Select Your Dates</label>
+    <>
+      <div id="booking" className="bg-zinc-200 w-full h-screen">
+        <motion.div
+          className="flex flex-col justify-center items-center w-full h-full"
+          whileInView={{ x: ["-100%", "0%" ]}}
+          transition={{ duration: 0.3, delay: 0.05 }}
+        >
+          <motion.div
+            whileInView={{ x: ["-100%", "0%" ]}}
+            transition={{ duration: 0.3, delay: 0.1 }}
+            className="max-w-[1000px] w-full grid grid-cols-2"
+          >
+            <motion.p
+              variants={variants}
+              className="text-4xl font-bold inline border-b-4 border-pink-600 pl-2"
+            >Booking</motion.p>
+          </motion.div>
+          <motion.div whileInView={{ x: ["-100%", "0%" ]}}
+            transition={{ duration: 0.3, delay: 0.1 }} className="max-w-[1000px] w-full grid sm:grid-cols-2">
+            <motion.div
+              initial={{ x: "-100%" }}
+              animate={{ x: "0%" }}
+              transition={{ duration: 0.2 }}
+              className="sm:text-right text-4xl font-bold"
+            >
+              <motion.i className="text-2xl mr-5">Enjoy your stay. Or else.</motion.i>
+              {startDate && endDate && (
+              <motion.p className="py-20 text-xl" variants={variants}>You have selected dates from<br /><span className="text-blue-600">{moment(startDate).format("MMMM Do YYYY")}{" "}</span> to <span className="text-blue-800">{moment(endDate).format("MMMM Do YYYY")}</span>.</motion.p>)}
+            </motion.div>
+            <motion.div whileInView={{ x: ["-100%", "0%" ]}} transition={{ duration: 0.2, delay: 0.05 }} className="p-5 flex w-full justify-center flex-wrap">
+              <motion.div variants={variants} className="flex flex-wrap w-full items-center justify-center -mt-10 bg-slate-400">
+                <label className="w-full text-center p-4">Select Your Dates</label>
                   <DatePicker
                     selectsRange={true}
                     selected={startDate}
@@ -60,38 +68,16 @@ export default function Booking({ setCurrentSection }: Props) {
                     startDate={startDate}
                     endDate={endDate}
                     isClearable
-                    className="bg-stone-100 w-full"
-                    popperPlacement="bottom-end"
-                    popperModifiers={[
-                      {
-                        name: "offset",
-                        options: {
-                          offset: [5, 0],
-                        },
-                      },
-                      {
-                        name: "preventOverflow",
-                        options: {
-                          rootBoundary: "viewport",
-                          tether: false,
-                          altAxis: true,
-                        },
-                      },
-                    ]}
+                    className="bg-stone-100 w-full px-20 py-5"
+                    inline
+                    showDisabledMonthNavigation
                   />
+                  <button className="w-full p-5" type="submit">Submit</button>
                 </motion.div>
-                <Button className="font-bodoni w-full p-5" type="submit" variant="success">Submit</Button>
-              </motion.div>
-              
-            </motion.form>
-            <motion.div variants={variants}>
-            {startDate && endDate && (
-              <p>You have booked this room from {moment(startDate).format("MMMM Do YYYY")}{" "} to {moment(endDate).format("MMMM Do YYYY")}.</p>)}
             </motion.div>
           </motion.div>
         </motion.div>
-      </motion.div>
-      </motion.div>
-    </motion.section>
+      </div>
+    </>
   );
 }
