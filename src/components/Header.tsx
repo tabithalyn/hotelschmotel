@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Carousel from "./Carousel";
 
 const variants = {
   hidden: {
@@ -20,39 +21,23 @@ export default function Header() {
 
   return (
   <>
-    <div id="home" className="w-full h-screen bg-[#798caa] pt-40">
+    <div id="home" className="w-full h-screen bg-[#d0cab4] pt-[120px]">
       <motion.div
         className="max-w-[1000px] mx-auto px-8 flex-col justify-center h-full"
         whileInView={{ x: ["-100%", "0%" ]}}
         transition={{ duration: 0.3, delay: 0.05 }}
       >
-      <motion.div variants={variants} initial="hidden" whileInView="visible">
-        <motion.p variants={variants} className="text-pink-600">Welcome to</motion.p>
-        <motion.h1 variants={variants} className="text-4xl sm:text-7xl font-bold text-[#ccd6f6]">
-          The Hotel
+      <motion.div className="text-center" variants={variants} initial="hidden" whileInView="visible">
+        <motion.p variants={variants} className="text-[#634141] text-xl font-didact">Welcome to the</motion.p>
+        <motion.h1 variants={variants} className="text-5xl sm:text-7xl text-[#5a1d1d] font-limelight">
+          Hotel Schmotel
         </motion.h1>
-        <motion.h2 variants={variants} className="text-4xl sm:text-7xl font-bold text-[#596589]">
+        <motion.div variants={variants} className="text-lg sm:text-2xl font-didact text-[#462323]">
           No one ever checks out.
-        </motion.h2>
-        <motion.p variants={variants} className="text-[#414a63] py-4 max-w-[700px]">
-        Sed vestibulum nisl efficitur, tristique diam eu, dictum diam. Maecenas semper vestibulum sapien nec efficitur. Nulla mattis velit in tempor malesuada. Curabitur eget dignissim erat. Phasellus fermentum turpis libero, vitae imperdiet nulla condimentum id. Integer vitae vulputate nunc.
-        </motion.p>
-      </motion.div>
-      <motion.div variants={{
-        first: { x: "-100vw" },
-        then: { x: 0,
-          transition: {
-            duration: 0.4,
-            delay: 0.5
-          }
-        },
-      }} initial="first" animate="then">
-        <motion.button className="text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-pink-600 hover:border-pink-600">
-          Enter
-          <span className="group-hover:rotate-90 duration-300">
-          <i className="fa-solid fa-arrow-right ml-3"></i>
-          </span>
-        </motion.button>
+        </motion.div>
+        <motion.div variants={variants} className="py-4 w-full">
+          <Carousel />
+        </motion.div>
       </motion.div>
       </motion.div>
     </div>

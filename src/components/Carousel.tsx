@@ -30,7 +30,7 @@ const Carousel = () => {
 
     return (
       <div className="w-full flex justify-center p-7">
-        <div className="w-1/3 p-2 border-2 border-red-950 border-solid">
+        <div className="w-2/3 p-2 border-2 border-red-950 border-solid">
           <Slide>
           {slideImages.map((slideImage, index)=> (
               <div key={index}>

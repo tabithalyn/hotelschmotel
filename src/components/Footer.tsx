@@ -19,19 +19,20 @@ const variants = {
 export default function Footer() {
   return (
     <>
+      <div className="bg-red-950">
       <motion.footer
-        className="flex justify-stretch w-full py-10 bg-lime-300"
+        className="flex justify-stretch w-full py-10 bg-red-950 text-neutral-300"
         whileInView={{ x: "0%" }}
         initial={{ x: "-100%" }}
         transition={{ duration: 0.3, delay: 0.05 }}
       >
         <motion.div className="w-1/3 p-5">
-          <div className="text-xl">The Hotel</div>
-          Your stay is eternal.
+          <div className="text-xl font-abril font-black">The Hotel</div>
+          <span className="font-didact font-normal">Your stay is eternal.</span>
         </motion.div>
         <motion.div variants={variants} initial="hidden" whileInView="visible" className="w-1/3 p-5">
-          <motion.div variants={variants} className="text-xl">Contact
-            <motion.ul variants={variants} className="text-base">
+          <motion.div variants={variants} className="text-xl font-abril font-black">Contact
+            <motion.ul variants={variants} className="text-base font-didact font-normal">
               <motion.li variants={variants}>Link</motion.li>
               <motion.li variants={variants}>Link</motion.li>
               <motion.li variants={variants}>Link</motion.li>
@@ -41,8 +42,8 @@ export default function Footer() {
           </motion.div>
         </motion.div>
         <motion.div variants={variants} initial="hidden" whileInView="visible" className="w-1/3 p-5">
-          <motion.div variants={variants} className="text-xl">Other Links
-            <motion.ul variants={variants} className="text-base">
+          <motion.div variants={variants} className="text-xl font-abril font-black">Other Links
+            <motion.ul variants={variants} className="text-base font-didact font-normal">
               <motion.li variants={variants}>Link</motion.li>
               <motion.li variants={variants}>Link</motion.li>
               <motion.li variants={variants}>Link</motion.li>
@@ -52,6 +53,7 @@ export default function Footer() {
           </motion.div>
         </motion.div>
       </motion.footer>
+      </div>
     </>
   );
 }

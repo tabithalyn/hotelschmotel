@@ -27,7 +27,7 @@ export default function Booking() {
 
   return (
     <>
-      <div id="booking" className="bg-zinc-200 w-full h-screen">
+      <div id="booking" className="bg-[#d0cab4] w-full h-screen">
         <motion.div
           className="flex flex-col justify-center items-center w-full h-full"
           whileInView={{ x: ["-100%", "0%" ]}}
@@ -40,7 +40,7 @@ export default function Booking() {
           >
             <motion.p
               variants={variants}
-              className="text-4xl font-bold inline border-b-4 border-pink-600 pl-2"
+              className="text-5xl inline text-[#8e2828] pl-2 font-abril font-semibold tracking-wide"
             >Booking</motion.p>
           </motion.div>
           <motion.div whileInView={{ x: ["-100%", "0%" ]}}
@@ -49,15 +49,15 @@ export default function Booking() {
               initial={{ x: "-100%" }}
               animate={{ x: "0%" }}
               transition={{ duration: 0.2 }}
-              className="sm:text-right text-4xl font-bold"
+              className="sm:text-left text-xl pl-2 pt-2"
             >
-              <motion.i className="text-2xl mr-5">Enjoy your stay. Or else.</motion.i>
+              <motion.i className="text-base font-bodoni text-[#482318]">Enjoy your stay. Or else.</motion.i>
               {startDate && endDate && (
-              <motion.p className="py-20 text-xl" variants={variants}>You have selected dates from<br /><span className="text-blue-600">{moment(startDate).format("MMMM Do YYYY")}{" "}</span> to <span className="text-blue-800">{moment(endDate).format("MMMM Do YYYY")}</span>.</motion.p>)}
+              <motion.p className="py-20 text-xl font-didact" variants={variants}>You have selected dates from<br /><span className="text-red-600 font-limelight">{moment(startDate).format("MMMM Do YYYY")}{" "}</span> to <span className="text-red-800 font-limelight">{moment(endDate).format("MMMM Do YYYY")}</span>.</motion.p>)}
             </motion.div>
             <motion.div whileInView={{ x: ["-100%", "0%" ]}} transition={{ duration: 0.2, delay: 0.05 }} className="p-5 flex w-full justify-center flex-wrap">
-              <motion.div variants={variants} className="flex flex-wrap w-full items-center justify-center -mt-10 bg-slate-400">
-                <label className="w-full text-center p-4">Select Your Dates</label>
+              <motion.div variants={variants} className="flex flex-wrap w-full items-center justify-center md:-mt-10 bg-[#f8f4e3] shadow-md shadow-[#938a6a]">
+                <label className="w-full text-lg text-center p-4 font-abril font-semibold">Select Your Dates</label>
                   <DatePicker
                     selectsRange={true}
                     selected={startDate}
@@ -72,7 +72,7 @@ export default function Booking() {
                     inline
                     showDisabledMonthNavigation
                   />
-                  <button className="w-full p-5" type="submit">Submit</button>
+                  <button className="w-full p-5 font-didact hover:skew-y-3 hover:text-cyan-800 transition-all" type="submit">Book It</button>
                 </motion.div>
             </motion.div>
           </motion.div>
