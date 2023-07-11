@@ -30,14 +30,17 @@ export default function Contact() {
             whileInView={{ x: ["-100%", "0%"] }}
             transition={{ duration: 0.3, delay: 0.01 }}
           >
-            <motion.p variants={variants} className="text-4xl inline border-b-4 border-pink-600 text-gray-800 font-abril font-extrabold">Contact</motion.p>
-            <motion.p variants={variants} className="text-gray-600 py-4">Submit by form, email, or telepathy.</motion.p>
+            <motion.p
+              variants={variants}
+              className="text-5xl inline text-[#8e2828] pl-2 font-abril font-semibold tracking-wide"
+            >Contact</motion.p>
+            <motion.i variants={variants} className="text-base font-bodoni text-[#482318] ml-4">Submit by form, email, or telepathy.</motion.i>
           </motion.div>
-          <motion.div variants={variants} initial="hidden" whileInView="visible" className="flex flex-col max-w-[600px] w-full">
-            <motion.input variants={variants} className="bg-[#ccd6f6] p-2" type="text" placeholder="Name" name="name" />
-            <motion.input variants={variants} className="my-4 p-2 bg-[#ccd6f6]" type="email" name="email" placeholder="Email" />
-            <motion.textarea variants={variants} className="bg-[#ccd6f6] p-2" name="message" rows={6} placeholder="Message"></motion.textarea>
-            <motion.button transition={{ duration: 0.5, delay: 0.5 }} className="text-white border-2 bg-indigo-950 hover:rotate-180 transition-all hover:bg-pink-600 hover:border-pink-600 px-4 py-3 my-8 mx-auto flex items-center font-abril font-semibold tracking-wide" onClick={() => alert("Thank you for your submission.")}>Send ?</motion.button>
+          <motion.div variants={variants} initial="hidden" whileInView="visible" className="flex flex-col max-w-[600px] w-full text-neutral-950">
+            <motion.input variants={variants} className="bg-stone-100 p-2" type="text" placeholder="Name" name="name" />
+            <motion.input variants={variants} className="my-4 p-2 bg-stone-100" type="email" name="email" placeholder="Email" />
+            <motion.textarea variants={variants} className="bg-stone-100 p-2" name="message" rows={6} placeholder="Message"></motion.textarea>
+            <motion.button transition={{ duration: 0.5, delay: 0.5 }} className="text-stone-100 border-2 border-red-900 bg-red-950 hover:rotate-180 transition-all hover:bg-red-800 hover:border-red-700 px-4 py-3 my-8 mx-auto flex items-center font-abril font-semibold tracking-wide" onClick={() => alert("Thank you for your submission.")}>Send ?</motion.button>
           </motion.div>
         </motion.div>
       </div>

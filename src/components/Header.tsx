@@ -25,7 +25,7 @@ export default function Header() {
       <motion.div
         className="max-w-[1000px] mx-auto px-8 flex-col justify-center h-full"
         whileInView={{ x: ["-100%", "0%" ]}}
-        transition={{ duration: 0.3, delay: 0.05 }}
+        transition={{ duration: 0.1, delay: 0.02 }}
       >
       <motion.div className="text-center" variants={variants} initial="hidden" whileInView="visible">
         <motion.p variants={variants} className="text-[#634141] text-xl font-didact">Welcome to the</motion.p>
