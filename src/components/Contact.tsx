@@ -34,7 +34,7 @@ export default function Contact() {
               variants={variants}
               className="text-5xl inline text-[#8e2828] pl-2 font-abril font-semibold tracking-wide"
             >Contact</motion.p>
-            <motion.i variants={variants} className="text-base font-bodoni text-[#482318] ml-4">Submit by form, email, or telepathy.</motion.i>
+            <motion.i variants={variants} className="text-base font-bodoni text-[#482318] ml-4 block mt-4">Submit by form, email, or telepathy.</motion.i>
           </motion.div>
           <motion.div variants={variants} initial="hidden" whileInView="visible" className="flex flex-col max-w-[600px] w-full text-neutral-950">
             <motion.input variants={variants} className="bg-stone-100 p-2" type="text" placeholder="Name" name="name" />

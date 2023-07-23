@@ -30,12 +30,20 @@ export default function Information() {
             <motion.p variants={variants} className="py-4 font-bodoni italic text-[#482318]">About The Hotel</motion.p>
           </motion.div>
           <motion.div
-            className="w-full text-center py-8"
+            className="w-full text-center py-8 flex justify-center flex-wrap"
             variants={variants} initial="hidden" whileInView="visible"
           >
-            <motion.div variants={variants} className="shadow-md shadow-[#938a6a] text-neutral-900 bg-stone-100 p-20 font-didact">
-              <p>Phasellus pellentesque nulla a bibendum faucibus. Nam turpis ex, suscipit id nibh eget, aliquet consequat libero. Nulla mattis scelerisque velit sit amet tincidunt.</p>
-              <p>Fusce bibendum ultricies nibh, et porttitor dolor porta vitae. Cras mattis finibus purus id interdum. Phasellus mollis lectus ante, eget aliquam nisl efficitur at.</p>
+            <motion.div variants={variants} className="shadow-md shadow-[#938a6a] text-neutral-900 bg-stone-100 p-20 sm:p-10 xs:p-5 xs:text-sm sm:text-base md:text-base font-didact sm:w-5/6 md:5/6 xs:w-7/8">
+              <h2 className="text-6xl text-[#eeebe0] font-bodoni font-black -mt-7 -mb-5 -mx-5 float-left align-text-top tracking-wide">est. 20?0?</h2>
+              <p className="m-3 text-left">Phasellus pellentesque nulla a bibendum faucibus. Nam turpis ex, suscipit id nibh eget, aliquet consequat libero. Nulla mattis scelerisque velit sit amet tincidunt.</p>
+              <p className="m-3 text-left">Fusce bibendum ultricies nibh, et porttitor dolor porta vitae. Cras mattis finibus purus id interdum. Phasellus mollis lectus ante, eget aliquam nisl efficitur at.</p>
+              <p className="pb-4 pt-6 text-center text-sm w-full hover:cursor-default hover:text-[#5c504f] hover:tracking-wide hover:skew-x-2 transition-all">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <div className="h-[1px] w-full before:content-none bg-gradient-to-r from-transparent via-[#721c1c] to-transparent"></div>
+              <div className="border-x-[1px] w-7 h-2 bg-stone-100 border-[#721c1c] ml-[50%] -mt-1 z-20">
+                <span className="font-biz text-4xl text-[#421212]">"</span>
+              </div>
             </motion.div>
           </motion.div>
         </motion.div>

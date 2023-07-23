@@ -28,9 +28,9 @@ export default function Header() {
         transition={{ duration: 0.1, delay: 0.02 }}
       >
       <motion.div className="text-center" variants={variants} initial="hidden" whileInView="visible">
-        <motion.p variants={variants} className="text-[#634141] text-xl font-didact">Welcome to the</motion.p>
-        <motion.h1 variants={variants} className="text-5xl sm:text-7xl text-[#5a1d1d] font-limelight">
-          Hotel Schmotel
+        <motion.p variants={variants} className="text-[#634141] text-2xl font-didact">Welcome to the</motion.p>
+        <motion.h1 variants={variants} className="text-7xl sm:text-6xl xs:text-5xl text-[#5a1d1d] font-limelight hover:cursor-default">
+          <span className="hover:drop-shadow-lg transition-all">Hotel Schmotel</span>
         </motion.h1>
         <motion.div variants={variants} className="text-lg sm:text-2xl font-didact text-[#462323]">
           No one ever checks out.
