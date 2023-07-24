@@ -84,7 +84,7 @@ export default function Booking() {
               <motion.p className="pt-4 md:pt-10 text-center font-didact xs:text-base md:text-lg" variants={variants}><span className="text-red-600 font-abril px-2">{moment(startDate).format("MMMM Do YYYY")}{" "}</span> to <span className="text-red-800 font-abril px-2">{moment(endDate).format("MMMM Do YYYY")}</span></motion.p>)}
             </motion.div>
             <motion.div whileInView={{ x: ["-100%", "0%" ]}} transition={{ duration: 0.2, delay: 0.05 }} className="p-5 flex w-full justify-center flex-wrap">
-              <motion.div variants={variants} className="flex flex-wrap w-full items-center justify-center md:-mt-10 bg-[#f8f4e3] shadow-md shadow-[#938a6a]">
+              <motion.div variants={variants} className="flex flex-wrap w-full items-center justify-center md:-mt-10 bg-[#f8f4e3d1] shadow-md shadow-[#938a6a]">
                 <label className="w-full text-lg text-center p-4 font-abril font-semibold">Select Your Dates</label>
                   <DatePicker
                     selectsRange={true}

@@ -34,7 +34,7 @@ export default function Information() {
             variants={variants} initial="hidden" whileInView="visible"
           >
             <motion.div variants={variants} className="shadow-md shadow-[#938a6a] text-neutral-900 bg-stone-100 p-20 sm:p-10 xs:p-5 xs:text-sm sm:text-base md:text-base font-didact sm:w-5/6 md:5/6 xs:w-7/8">
-              <h2 className="text-6xl text-[#eeebe0] font-bodoni font-black -mt-7 -mb-5 -mx-5 float-left align-text-top tracking-wide">est. 20?0?</h2>
+              <h2 className="text-6xl text-[#eeebe0] font-bodoni font-black md:-mt-7 xs:-mt-6 xs:-mb-6 md:-mb-5 -mx-5 float-left align-text-top tracking-wide">est. 20?0?</h2>
               <p className="m-3 text-left">Phasellus pellentesque nulla a bibendum faucibus. Nam turpis ex, suscipit id nibh eget, aliquet consequat libero. Nulla mattis scelerisque velit sit amet tincidunt.</p>
               <p className="m-3 text-left">Fusce bibendum ultricies nibh, et porttitor dolor porta vitae. Cras mattis finibus purus id interdum. Phasellus mollis lectus ante, eget aliquam nisl efficitur at.</p>
               <p className="pb-4 pt-6 text-center text-sm w-full hover:cursor-default hover:text-[#5c504f] hover:tracking-wide hover:skew-x-2 transition-all">
